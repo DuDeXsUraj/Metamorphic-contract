@@ -18,10 +18,12 @@ contract B {
 
 // The factory itself can be self destructed 
 contract Factory {
+   // Creates an instance of contract A and returns its address.
     function helloA() public returns (address) {
         return address(new A());
     }
 
+   // Creates an instance of contract B with the parameter 1337 passed to its constructor and returns its address.
     function helloB() public returns (address) {
         return address(new B(1337));
     }
