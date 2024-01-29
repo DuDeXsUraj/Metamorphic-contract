@@ -4,7 +4,10 @@ pragma solidity 0.8.12;
 
 import {Test} from "forge-std/Test.sol";
 import '../src/Metamorphic.sol';
-
+// create - msg.sender,nonce // create2 - msg.sender , salt , creation code 
+// In this test we will use both create and create2
+// When we are deploying factory contract initially by salt value
+//then dep
 contract MetamorphicContract is Test {
     A private a;
     B private b;
@@ -20,7 +23,8 @@ contract MetamorphicContract is Test {
         // kill the metamorphic contract implementation
         a.kill();
     
-        // perpose of selfdestructing factory is that it will reset the accounts nonce cause we using create 
+        // perpose of selfdestructing factory is 
+        // that it will reset the accounts nonce cause we are using create opcode (nonce = 0)
         factory.kill();
     }
     
