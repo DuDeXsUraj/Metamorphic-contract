@@ -28,7 +28,7 @@ contract Create2 is Test ,Events{
         // we should have pass owner address for getting bytecode
         console.logBytes(bytecode);
         // for getting address pass bytecode producted by the that getBytecode function
-        // and salt which in this case which is 1
+        // and salt which in this case is 1
         address initialAddr = create2.getAddress(bytecode, salt);
         //By creating several contracts from the same address,
         //using the same salt and the same bytecode, we will get the same address.
@@ -40,8 +40,8 @@ contract Create2 is Test ,Events{
         console.logAddress(finalAddr);
         assert(initialAddr == finalAddr);
         // this assert ensures that we could know the address of contract before the deploy
-        // cause we are saying that addr (initial addr) and contractAddr(final addr) would be same
+        // cause we are saying that (initial addr) and (final addr) would be same
         // that mean we can predict the address initially
-        // and that emit is prof of that
+        // and that emit is the prof of that
     }
 }
