@@ -1,3 +1,4 @@
 
 npm i
-forge test -vvvvvx
+
+forge test -vvvvv
